@@ -1,4 +1,3 @@
-
   //creat random number, Math.random returns num between 0 and 1.
   //1 is exclusive. 0 is inclusive. num is between 1 and 100.
 
@@ -23,14 +22,14 @@
     }
   }
 
-
+//function to ask for a number and increase guess count
   function game(){
     guessCount +=1;
      var guess = prompt("Guess a number between 1 and 100.");
-    //guessArr.push(guess);
     play(guess);
   }
 
+  //Will they play again?
   function playAgain(){
     var response = prompt("Would you like to play again?");
     if (response == "yes" || response == 'y' || response == "Yes" || response == "Y"){
@@ -42,29 +41,28 @@
     }
   }
 
+  //See if they are right or need to guess again.
  function play(guess) {
-    //while(true){
+
         if (guess == '' || guess == null){
          alert("Have a good day!");   
          //break;
         } else if (guess == num){
             compareScore(currentPlayer, guessCount); 
             playAgain();
-            //break;
         } else if (guess > num){ 
             alert(`Sorry ${currentPlayer}, guess lower!`);
             game();
-            //break;
-        } else if (guess < num){
+        } else{
             alert(`Sorry ${currentPlayer}, guess Higher!`);
             game();
-
         }
-    //}
+
   }
 
+  //function to see if they enter in name or not. If no name or cancel button they arent going to play
   function willTheyPlay(){
-    //debugger;
+    //add while(true) to make page load up while running js
     while(true){
        currentPlayer = prompt("What is your name?")
     if (currentPlayer == '' || currentPlayer == null){
