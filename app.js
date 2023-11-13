@@ -13,6 +13,8 @@ function compareScore(name, score) {
     if (score < players[name]) {
       alert(`Congratulations ${name}! You beat your current score by ${players[name] - score} guesses!`);
       players[name] = score;
+    } else if (score == players[name]) {
+      alert(`Congratulations ${name}! You tied your high score!`);
     } else {
       alert(`Congratulations ${name}! You did better previously by ${score - players[name]} guesses!`);
     }
@@ -46,7 +48,6 @@ function playAgain() {
 function play(guess) {
   if (guess == "" || guess == null) {
     alert("Have a good day!");
-    //break;
   } else if (guess == num) {
     compareScore(currentPlayer, guessCount);
     playAgain();
