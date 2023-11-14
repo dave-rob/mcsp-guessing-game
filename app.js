@@ -67,7 +67,6 @@ function play(guess) {
 
 //function to see if they enter in name or not. If no name or cancel button they arent going to play
 function willTheyPlay() {
-  //add while(true) to make page load up while running js
     currentPlayer = prompt("What is your name?");
     if (currentPlayer == "" || currentPlayer == null) {
       alert("have a good day!");
